@@ -1,0 +1,129 @@
+### User Register
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName": "krishna",
+    "lastName": "chaithanya",
+    "email": "krishna@example.com",
+    "password": "password123",
+    "profileImageUrl": "https://example.com/profile-picture.jpg"
+}
+
+### User Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "krishna@example.com",
+    "password": "password123"
+}
+
+
+### Reading all articles from user side
+GET http://localhost:4000/user-api/user/698c9a644fdf7fc82d5c1a08/articles
+
+
+### Commenting on an article
+PUT http://localhost:4000/user-api/user/698965e1075606f41d6fcf75/article/69897e0dd3b67969646b04f3
+Content-Type: application/json
+
+{
+    "comment": "This is a comment on the article second time."
+}
+
+
+
+
+
+
+
+### Author Register
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName": "teja",
+    "lastName": "author",
+    "email": "krishna.author@example.com",
+    "password": "password123",
+    "profileImageUrl": "https://example.com/profile-picture.jpg"
+}
+
+### Author Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "krishna.author@example.com",
+    "password": "password123"
+}
+
+### Create article
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698c9aeb4fdf7fc82d5c1a0f",
+    "title": "My First Article",
+    "category": "programming",
+    "content": "Hello! This is my first article."
+}
+
+
+
+### Read all articles by an author
+GET http://localhost:4000/author-api/articles/698c9aeb4fdf7fc82d5c1a0f
+
+### Update an article (AUTHOR)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698c9aeb4fdf7fc82d5c1a0f",
+    "articleId" : "698c9b374fdf7fc82d5c1a16",
+    "title": "My first Article_2",
+    "category": "programming",
+    "content": "Hello! This is my first Updated article."
+}
+
+### Soft delete an article (AUTHOR)
+PUT http://localhost:4000/author-api/author/698c9aeb4fdf7fc82d5c1a0f/article/698c9b374fdf7fc82d5c1a16
+
+
+
+### Admin Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin123"
+}
+
+### Admin reading all articles
+GET http://localhost:4000/admin-api/698c9d32d27f9f7938e85e1e/articles
+
+### block the user (done by admin)
+PUT http://localhost:4000/admin-api/698c9d32d27f9f7938e85e1e/block/698c9a644fdf7fc82d5c1a08
+
+### unblock the user (done by admin)
+PUT http://localhost:4000/admin-api/698c9d32d27f9f7938e85e1e/unblock/698c9a644fdf7fc82d5c1a08
+
+
+### change password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "email": "anurag.sharma@example.com",
+    "oldPassword": "password123",
+    "newPassword": "newpassword123"
+}
+
+
+### LOGOUT
+GET http://localhost:4000/common-api/logout
+
+### test request
+GET http://localhost:4000/test
