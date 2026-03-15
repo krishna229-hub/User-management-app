@@ -1,0 +1,21 @@
+GET http://localhost:5000/user-api/users
+
+###creating
+POST http://localhost:5000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"Krishna",
+    "email":"Krishna@email.com",
+    "DOB":"2005-09-22",
+    "mobileNumber":9744778943
+    }
+
+### deleting
+
+DELETE http://localhost:5000/user-api/users/69b6b7d937e28130fccd239e
+
+
+### reactivating user from soft delete
+
+PATCH http://localhost:5000/user-api/users/69b6b7d937e28130fccd239e
